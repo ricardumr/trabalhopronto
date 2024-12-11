@@ -1,0 +1,52 @@
+<%- include('../cabecalho.ejs') %>
+
+<section class="col-12 col-md-10">
+    <div class="card my-4 border-0 shadow-sm" style="border-radius: 10px; max-width: 900px; margin: auto;">
+        <h5 class="card-header text-white" style="background-color: #5e2a84; border-radius: 10px 10px 0 0; padding: 15px 20px; font-size: 20px; font-weight: 600;">Movimento</h5>
+        <div class="card-body">
+            <form method="post">
+                <!-- Data -->
+                <div class="mb-3">
+                    <label for="data" class="form-label">Data</label>
+                    <input type="datetime-local" name="data" required id="data" class="form-control" style="border-radius: 8px; border: 1px solid #ccc;">
+                </div>
+
+                <!-- Valor -->
+                <div class="mb-3">
+                    <label for="valor" class="form-label">Valor</label>
+                    <input type="number" name="valor" required id="valor" class="form-control" style="border-radius: 8px; border: 1px solid #ccc;">
+                </div>
+
+                <div class="mb-3">
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <select class="form-select" name="usuario" id="usuario" required style="border-radius: 8px; border: 1px solid #ccc;">
+                        <% usuarios.forEach((usuario) => { %>
+                            <option value="<%= usuario._id %>"><%= usuario.nome %></option>
+                        <% }) %>
+                    </select>
+                </div>
+
+                <!-- Tipo de Operação (Saque ou Depósito) -->
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="operacao" id="saque" value="saque" checked>
+                    <label class="form-check-label" for="saque" style="font-size: 1.1em; color: #333;">
+                        Saque
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="operacao" id="deposito" value="deposito">
+                    <label class="form-check-label" for="deposito" style="font-size: 1.1em; color: #333;">
+                        Depósito
+                    </label>
+                </div>
+
+                <!-- Botão de Submissão -->
+                <div class="mb-3">
+                    <input type="submit" value="Adicionar" class="form-control" style="background-color: #5e2a84; color: white; font-size: 16px; border-radius: 25px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s ease, color 0.3s ease;">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<%- include('../rodape.ejs') %>

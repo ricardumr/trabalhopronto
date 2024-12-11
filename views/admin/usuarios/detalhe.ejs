@@ -1,0 +1,30 @@
+<%- include('../cabecalho.ejs') %>
+
+<section class="col-12 col-md-10">
+    <div class="card my-4 border-0 shadow-sm" style="border-radius: 10px; max-width: 900px; margin: auto;">
+        <h5 class="card-header text-white" style="background-color: #5e2a84; border-radius: 10px 10px 0 0; padding: 15px 20px; font-size: 20px; font-weight: 600;">Lista de Usuários</h5>
+        <div class="card-body">
+            <div class="card" style="width: 80%; margin: auto; text-align: center; border-radius: 8px; border: 1px solid #ccc;">
+                <img class="card-img-top" src="/usuarios/<%=usuario.foto%>" alt="" style="border-radius: 8px 8px 0 0;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold; color: #5e2a84;"><%=usuario.nome%></h5>
+                    <p class="card-text"><strong>Email:</strong> <%=usuario.email%></p>
+                    <p class="card-text"><strong>Endereço:</strong> <%=usuario.endereco%></p>
+                    <p class="card-text"><strong>Telefone:</strong> <%=usuario.telefone%></p>
+                    <p class="card-text"><strong>CPF:</strong> <%=usuario.cpf%></p>
+                    <p class="card-text"><strong>Admin:</strong> <%=usuario.admin ? 'Sim' : 'Não'%></p>
+                    <p class="card-text"><strong>Saldo:</strong> <%=saldo%> R$</p>
+
+                    <!-- Botão Voltar -->
+                    <a href="/admin/usuarios/lst" class="btn btn-primary" 
+                       style="background-color: #5e2a84; color: white; border-radius: 25px; padding: 10px 20px; font-size: 16px; 
+                       transition: background-color 0.3s ease, color 0.3s ease; letter-spacing: 2px;">
+                        Voltar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../rodape.ejs') %>

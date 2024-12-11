@@ -1,0 +1,35 @@
+<%- include('../cabecalho.ejs') %>
+
+<section class="col-12 col-md-10">
+    <div class="card my-4 border-0 shadow-sm" style="border-radius: 10px; max-width: 900px; margin: auto;">
+        <h5 class="card-header text-white" style="background-color: #5e2a84; border-radius: 10px 10px 0 0; padding: 15px 20px; font-size: 20px; font-weight: 600;">Lista de Movimentos</h5>
+        <div class="card-body">
+            <form method="post">
+                <!-- ID (Somente leitura) -->
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" name="id" readonly id="id" class="form-control" value="<%= Movimento._id %>" 
+                           style="background-color: #f0f0f0; border-radius: 25px; border: 1px solid #ddd; padding: 10px 15px; font-size: 16px;">
+                </div>
+
+                <!-- Nome -->
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" name="nome" required id="nome" class="form-control" value="<%= Movimento.nome %>" 
+                           style="border-radius: 25px; border: 1px solid #ddd; padding: 10px 15px; font-size: 16px;">
+                </div>
+
+                <!-- Botão de Submissão -->
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary" 
+                            style="background-color: #5e2a84; color: white; font-size: 1.2em; border-radius: 25px; padding: 12px 20px; width: 100%; cursor: pointer; display: flex; justify-content: center; align-items: center;">
+                        Adicionar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<%- include('../rodape.ejs') %>
+    

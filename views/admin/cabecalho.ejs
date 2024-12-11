@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Nubank</title>
+    <style>
+        .nav-link {
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center; /* Centraliza a barra de navegação */
+            align-items: center;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: center; /* Centraliza os itens de navegação */
+        }
+
+        .navbar-brand {
+            margin-right: 10px; /* Ajusta a distância entre a logo e os itens de navegação */
+        }
+
+        /* Ajuste para o botão de pesquisa */
+        .form-inline {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md" style="background-color:#A020F0;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <!-- Logo próxima ao "Listar Usuários" -->
+                <li class="nav-item">
+                    <a class="navbar-brand" href="#">
+                        <img src="/nubank.png" height="50px" alt="logo">
+                    </a>
+                </li>
+
+                <!-- Itens de navegação centralizados -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/usuarios/lst">Listar Usuários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/movimento/lst">Listar Movimento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/movimento/add">Adicionar Movimento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/contrato/lst">Lista Contrato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/contrato/add">Adicionar contrato</a>
+                </li>
+            </ul>
+
+            <!-- Formulário de Pesquisa -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8iSx8mU9EXFjjbONgCZf2Xexz6yZZbg5s5nC6EO5ZpcxR2YfXz5rzWz5he5jFZy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UOQ6Mfl+Xjms5rXdyZybZa0pP6U58oYpVfhSDoC6kFOzRQKtLTVgZZxVZ0sqJqB3" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-JkzDqCU7Qoyp4MMeKxAXz64D46eFP3F7J8diZzXykW5z+gnpZZT9xByq/UxlQpKr" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

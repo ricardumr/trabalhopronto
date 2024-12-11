@@ -1,0 +1,47 @@
+<%- include('../cabecalho.ejs') %>
+
+<section class="col-12 col-md-10">
+    <div class="card my-4" style="border-radius: 10px; max-width: 900px; margin: auto;">
+        <h5 class="card-header text-white" style="background-color: #5e2a84; border-radius: 10px 10px 0 0; padding: 15px 20px; font-size: 20px; font-weight: 600;">Edita Contratos</h5>
+        <div class="card-body">
+            <form method="post">
+                <!-- ID (Somente leitura) -->
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" name="id" readonly id="id" class="form-control" value="<%= Contrato._id %>" style="background-color: #f0f0f0; border-radius: 8px; border: 1px solid #ccc;">
+                </div>
+
+                <!-- Nome -->
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" name="nome" required id="nome" class="form-control" value="<%= Contrato.nome %>" style="border-radius: 8px; border: 1px solid #ccc;">
+                </div>
+
+                <!-- Valor -->
+                <div class="mb-3">
+                    <label for="valor" class="form-label">Valor</label>
+                    <input type="number" step="0.01" name="valor" required id="valor" class="form-control" value="<%= Contrato.valor %>" style="border-radius: 8px; border: 1px solid #ccc;">
+                </div>
+
+                <!-- Quantidade -->
+                <div class="mb-3">
+                    <label for="quantidade" class="form-label">Quantidade</label>
+                    <input type="number" name="quantidade" required id="quantidade" class="form-control" value="<%= Contrato.quantidade %>" style="border-radius: 8px; border: 1px solid #ccc;">
+                </div>
+
+                <!-- Categoria -->
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Categoria</label>
+                    <input type="text" name="categoria" required id="categoria" class="form-control" value="<%= Contrato.categoria %>" style="border-radius: 8px; border: 1px solid #ccc;">
+                </div>
+
+                <!-- Botão de Submissão -->
+                <div class="mb-3">
+                    <input type="submit" value="Atualizar" class="form-control" style="background-color: #5e2a84; color: white; font-size: 1.2em; border-radius: 25px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s ease, color 0.3s ease;">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<%- include('../rodape.ejs') %>

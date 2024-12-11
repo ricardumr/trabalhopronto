@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFStore - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #5e2a84; /* Fundo roxo */
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out; /* Animação do fade-in do corpo */
+        }
+
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 700px; /* A largura máxima do formulário */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            opacity: 0; /* Inicialmente invisível */
+            animation: formSlideIn 1s ease-out forwards; /* Animação do slide-in */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 150px; /* Tamanho da logo */
+            height: auto;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para os inputs */
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1.2em;
+            color: #333;
+            height: 60px; /* Tamanho ideal para a altura */
+            box-sizing: border-box;
+            transition: all 0.3s ease; /* Transição suave para o efeito de foco */
+        }
+
+        .form-control:focus {
+            border-color: #5e2a84; /* Cor roxa no foco */
+            outline: none;
+            box-shadow: 0 0 5px rgba(94, 42, 132, 0.5); /* Efeito de brilho */
+            transform: scale(1.05); /* Leve expansão quando o campo estiver em foco */
+        }
+
+        /* Estilo para o botão */
+        button {
+            background-color: #5e2a84;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.3em;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+            height: 60px;
+        }
+
+        button:hover {
+            background-color: #7a3ba3;
+        }
+
+        .signup-link {
+            font-size: 1em;
+            color: #333;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signup-link a {
+            text-decoration: none;
+            color: #5e2a84;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-control {
+                width: 100%; /* Certifica-se de que os inputs ocupem a largura total */
+                padding: 12px;
+                height: 50px;
+            }
+
+            button {
+                height: 50px;
+                font-size: 1.2em;
+            }
+        }
+
+        /* Animação de fade-in do corpo */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Animação do formulário deslizante */
+        @keyframes formSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="../../nubank.png" alt="Logo">
+        </div>
+
+        <h1>Login</h1>
+        <form method="POST" action="/login">
+            <!-- E-mail -->
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" class="form-control" required placeholder="Digite seu e-mail">
+            </div>
+
+            <!-- Senha -->
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" class="form-control" required placeholder="Digite sua senha">
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p class="signup-link">
+            Não tem uma conta? <a href="/cadastro">Cadastre-se aqui!</a>
+        </p>
+    </div>
+
+</body>
+</html>

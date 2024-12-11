@@ -1,0 +1,48 @@
+<%- include('../cabecalho.ejs') %>
+
+<section class="col-12 col-md-10">
+    <div class="card my-4 border-0 shadow-sm" style="border-radius: 10px; max-width: 900px; margin: auto;">
+        <h5 class="card-header text-white" style="background-color: #5e2a84; border-radius: 10px 10px 0 0; padding: 15px 20px; font-size: 20px; font-weight: 600;">Lista de Usuários</h5>
+        <div class="card-body">
+            <!-- Formulário de Pesquisa -->
+            <form method="post" class="form-inline mb-4 justify-content-end">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="pesquisar" placeholder="Pesquisar" name="pesquisar" 
+                        style="border-radius: 25px; border: 1px solid #ddd; padding: 10px 15px; width: 240px; font-size: 16px; transition: border-color 0.3s ease;">
+                </div>
+                <button type="submit" class="btn btn-primary ml-3" style="border-radius: 25px; padding: 10px 20px; font-size: 16px;">Pesquisar</button>
+            </form>
+
+            <!-- Tabela de Usuários -->
+            <table class="table table-sm table-borderless" style="font-size: 16px;">
+                <thead style="background-color: #f8f9fa;">
+                    <tr>
+                        <th scope="col" class="text-muted">Id</th>
+                        <th scope="col" class="text-muted">Nome</th>
+                        <th scope="col" class="text-muted">Email</th>
+                        <th scope="col" class="text-center text-muted">Detalhe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% Usuario.forEach(function(usuario){ %>
+                        <tr>
+                            <td><%= usuario._id %></td>
+                            <td><%= usuario.nome %></td>
+                            <td><%= usuario.email %></td>
+                            <td class="text-center">
+                                <!-- Link para detalhes do usuário com borda arredondada -->
+                                <a href="/admin/usuarios/detalhe/<%= usuario._id %>" 
+                                   class="text-decoration-none" 
+                                   style="color: #fff; background-color: #5e2a84; padding: 8px 20px; border-radius: 25px; font-size: 16px; transition: background-color 0.3s ease, color 0.3s ease; letter-spacing: 2px; display: inline-block;">
+                                   Ver detalhes
+                                </a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<%- include('../rodape.ejs') %>
